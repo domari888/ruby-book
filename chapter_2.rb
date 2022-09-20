@@ -208,3 +208,24 @@ p 2e-3
 ## 3 x 10⁴ を表現する
 p 2e+4
 #=> 20000.0
+
+# 数値クラスのあれこれ
+## Integerクラス(整数)
+p 10.class
+#=> Integer
+
+## Floatクラス(小数)
+p 1.5.class
+#=> Float
+
+## Rationalクラス(有理数リテラル)
+p r = 2 / 3r
+#=> (2/3)
+p r.class
+#=> Rational
+
+## Complexクラス(複素数リテラル)
+p c = 0.3 - 0.5i
+#=> (0.3-0.5i)
+p c.class
+#=> Complex
