@@ -255,3 +255,24 @@ p false || nil
 ### 2 を評価した時点で真偽が確定する(真)
 p nil || false || 2 || 3
 #=> 2
+
+# ----- 優先順位が低い and, or, not -----
+t1 = true
+t2 = true
+f1 = false
+
+## !は優先順位が高いため !(f1) || t1 となる
+!f1 || t1
+#=> true
+
+## notは優先順位が低いため not(f1 || t1)となる
+not f1 || t1
+#=> false
+
+## && は || よりも優先順位が高いため t1 or (t2 and f1) となる
+t1 || t2 && f1
+#=> true
+
+## and or は優先順位に違いがないため (t1 or t2) and f1 となる
+t1 or t2 and f1
+#=> false
