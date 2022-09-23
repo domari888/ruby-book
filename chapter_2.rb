@@ -286,3 +286,15 @@ else
   '正常です'
 end
 #=> '正常です'
+
+# ----- == true や == false は冗長使わないようにする -----
+string = ''
+if string.empty?
+  '空文字です'
+end
+
+## true や false そのものである事を判断するときは使用する
+some_value = true
+if some_value == true
+  'true です'
+end
