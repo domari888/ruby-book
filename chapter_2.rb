@@ -276,3 +276,13 @@ t1 || t2 && f1
 ## and or は優先順位に違いがないため (t1 or t2) and f1 となる
 t1 or t2 and f1
 #=> false
+
+# ----- unless 文 -----
+## else を使用して真だった場合の処理の書き方
+status = 'ok'
+unless status == 'ok'
+  '異常が発生しました'
+else
+  '正常です'
+end
+#=> '正常です'
