@@ -298,3 +298,57 @@ some_value = true
 if some_value == true
   'true です'
 end
+
+# ----- case 文 -----
+country = 'italy'
+case country
+when 'japan'
+  'こんにちは'
+when 'us'
+  'Hello'
+when 'italy'
+  'Ciao'
+else
+  '???'
+end
+#=> 'Ciao'
+
+## when節に複数の値を指定する
+country = 'イタリア'
+case country
+when 'japan', '日本'
+  'こんにちは'
+when 'us', 'アメリカ'
+  'Hello'
+when 'italy', 'イタリア'
+  'Ciao'
+else
+  '???'
+end
+#=> 'Ciao'
+
+## case文で評価された式の戻り値を変数に代入する
+country = 'italy'
+message =
+  case country
+  when 'japan'
+    'こんにちは'
+  when 'us'
+    'Hello'
+  when 'italy'
+    'Ciao'
+  else
+    '???'
+  end
+p message
+#=> 'Ciao
+
+## when節をワンライナーで書く
+country = 'italy'
+case country
+when 'japan' then 'こんにちは'
+when 'us' then 'Hello'
+when 'italy' then 'Ciao'
+else '???'
+end
+#=> 'Ciao
