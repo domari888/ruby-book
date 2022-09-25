@@ -352,3 +352,9 @@ when 'italy' then 'Ciao'
 else '???'
 end
 #=> 'Ciao
+
+# ----- 三項演算子 -----
+## 評価された式の戻り値を変数に代入する
+n = 11
+message = n > 10 ? '10より大きいです' : '10以下です'
+p message
