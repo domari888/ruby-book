@@ -358,3 +358,57 @@ end
 n = 11
 message = n > 10 ? '10より大きいです' : '10以下です'
 p message
+
+# ----- デフォルト値付きの引数 -----
+def greet(country = 'japan')
+  if country == 'japan'
+    p 'こんにちは'
+  else
+    p 'Hello'
+  end
+end
+
+greet
+#=> 'こんにちは'
+greet('us')
+#=> 'Hello'
+
+## デフォルト値ありとデフォルト値なしの引数を混在させる
+def default_args(a, b, c = 0)
+  "a=#{a}, b=#{b}, c=#{c}"
+end
+
+default_args(1, 2)
+#=> 'a=1, b=2, c=0'
+default_args(1, 2, 3)
+#=> 'a=1, b=2, c=3'
+
+## 動的に変わる値をデフォルト値に指定する
+def current_time(time = Time.now)
+  p "time: #{time}"
+end
+
+current_time
+#=> 'time: 2022-09-26 23:52:38 +0900'
+
+## メソッドの戻り値をデフォルト値に指定する
+def foo(message = bar)
+  p "message: #{message}"
+end
+
+def bar
+  'BAR'
+end
+
+foo
+#=> 'message: BAR'
+
+## 左にある引数をデフォルト値に指定する
+def point(x, y = x)
+  p "x=#{x}, y=#{y}"
+end
+
+point(5)
+#=> 'x=5, y=5'
+point(3, 10)
+#=> 'x=5, y=10'
