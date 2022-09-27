@@ -412,3 +412,48 @@ point(5)
 #=> 'x=5, y=5'
 point(3, 10)
 #=> 'x=5, y=10'
+
+# ----- ?で終わるメソッド -----
+## 空文字であれば true、それ以外は false
+''.empty?
+#=> true
+'aaa'.empty?
+#=> false
+
+## 引数の文字列が含まれていれば true, それ以外は false
+'abc'.include?('ab')
+#=> true
+'abc'.include?('abd')
+#=> false
+
+## 奇数であれば true、偶数であれば false
+1.odd?
+#=> true
+2.odd?
+#=> false
+
+## 偶数であれば true、奇数であれば false
+1.even?
+#=> false
+2.even?
+#=> true
+
+## オブジェクトが nil であれば true、それ以外は false
+nil.nil?
+#=> true
+'aaa'.nil?
+#=> false
+1.nil?
+#=> false
+''.nil?
+#=> false
+
+## ?で終わるメソッドを定義する
+def multiple_of_three?(n)
+  n % 3 == 0
+end
+
+multiple_of_three?(4)
+#=> false
+multiple_of_three?(6)
+#=> true
