@@ -457,3 +457,31 @@ multiple_of_three?(4)
 #=> false
 multiple_of_three?(6)
 #=> true
+
+# ----- !で終わるメソッド -----
+stiring_ruby = 'ruby'
+
+## 変数 string は変化しない
+string.upcase
+#=> 'RUBY'
+string
+#=> 'ruby'
+
+## 変数 string も変化する
+string.upcase!
+#=> 'RUBY'
+string
+#=> 'RUBY'
+
+## !で終わるメソッドを定義する
+string_rails = 'rails'
+
+def reverse_upcase!(string_rails)
+  string_rails.reverse.upcase
+end
+
+reverse_upcase!(string_rails)
+#=> 'SLIAR'
+string_rails
+#=> 'SLIAR'
+
