@@ -485,3 +485,9 @@ reverse_upcase!(string_rails)
 string_rails
 #=> 'SLIAR'
 
+# ----- エイリアスメソッド -----
+## 名称が違うだけで同じ意味を持つ
+'hello'.length
+#=> 5
+'hello'.size
+#=> 5
