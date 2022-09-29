@@ -491,3 +491,14 @@ string_rails
 #=> 5
 'hello'.size
 #=> 5
+
+# ----- 擬似変数 -----
+## __FILE__ は現在のソースファイル名を返す
+puts __FILE__
+#=> chapter_2.rb
+## __LINE__ は現在のソースファイル中の行番号を返す
+puts __LINE__
+#=> 500
+## __ENCODING__ は現在のソースファイルのスクリプトエンコーディングを返す
+puts __ENCODING__
+#=> UTF-8
