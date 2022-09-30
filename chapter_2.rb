@@ -502,3 +502,34 @@ puts __LINE__
 ## __ENCODING__ は現在のソースファイルのスクリプトエンコーディングを返す
 puts __ENCODING__
 #=> UTF-8
+
+# ----- 参照の概念 -----
+a = 'hello'
+b = 'hello'
+c = b
+
+## 同じ文字列でも、オブジェクトとしては別物
+a.object_id
+#=> 60
+b.object_id
+#=> 80
+
+## 変数に代入した場合は、どちらも同じオブジェクト
+b.object_id
+#=> 80
+c.object_id
+#=> 80
+
+## メソッドの引数として受け取った場合は、同じオブジェクトを参照する
+def method_d(d)
+  d.object_id
+end
+
+method_d(c)
+#=> 80
+
+## 同じオブジェクトの場合、true が返る
+a.equal?(c)
+#=> false
+b.equal?(c)
+#=> true
