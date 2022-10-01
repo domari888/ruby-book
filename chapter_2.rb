@@ -533,3 +533,17 @@ a.equal?(c)
 #=> false
 b.equal?(c)
 #=> true
+
+## 同じオブジェクトを参照していて、そのオブジェクトの状態が変更された場合、他の変数にも影響する
+def method_e!(e)
+  e.upcase!
+end
+
+method_e!(c)
+#=> 'HELLO'
+p a
+#=> 'hello'
+p b
+#=> 'HELLO'
+p c
+#=> 'HELLO'
