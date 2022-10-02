@@ -547,3 +547,15 @@ p b
 #=> 'HELLO'
 p c
 #=> 'HELLO'
+
+# ----- required と require_relative -----
+## 標準ライブラリを読み込む
+require 'date'
+p Date.today
+#=> #<Date: 2022-10-02 ((2459855j,0s,0n),+0s,2299161j)>
+
+## foo/hello.rb から bar/bye.rb を相対パスで読み込む
+require_relative '../bar/bye'
+
+## bar/hello.rb から bar/bye.rb を相対パスで読み込む
+require_relative 'bye'
